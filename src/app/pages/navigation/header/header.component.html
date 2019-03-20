@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+  <div fxHide.gt-xs>
+    <a mat-icon-button class="icon-header" (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </a>
+  </div>
+  <div>
+    <a mat-icon-button class="icon-header" routerLink="/">
+      <span>NG-MATERIAL</span>
+      <mat-icon>pages</mat-icon>
+    </a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+      <li *ngIf="!isAuth">
+        <a mat-icon-button routerLink="/login">
+          <mat-icon>input</mat-icon>
+          <span class="nav-caption">Login</span>
+        </a>
+      </li>
+      <li *ngIf="isAuth">
+        <a mat-icon-button routerLink="/dashboard">
+          <mat-icon>dashboard</mat-icon>
+          <span class="nav-caption">Dashboard</span>
+        </a>
+      </li>
+      <li *ngIf="isAuth">
+        <a mat-icon-button style="cursor: pointer" (click)="onLogout()">
+          <mat-icon>eject</mat-icon>
+          <span class="nav-caption">Logout</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>

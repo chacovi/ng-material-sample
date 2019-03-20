@@ -1,0 +1,29 @@
+<section>
+  <mat-card [ngStyle.xl]="{'width':'15%'}" [ngStyle.lg]="{'width':'25%'}" [ngStyle.md]="{'width':'35%'}"
+    [ngStyle.sm]="{'width':'45%'}" [ngStyle.xs]="{'width':'65%'}">
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="standard">
+        <mat-label>
+          <mat-icon>person</mat-icon>Your email
+        </mat-label>
+        <input type="email" matInput placeholder="Placeholder" formControlName="email">
+        <mat-hint>Please enter a valid email.</mat-hint>
+        <mat-error>Invalid or missing email.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>
+          <mat-icon>lock</mat-icon>Your password
+        </mat-label>
+        <input [type]="hidePassword ? 'password' : 'text'" matInput placeholder="Placeholder"
+          formControlName="password">
+        <a mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
+          <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </a>
+        <mat-hint>Please enter your password.</mat-hint>
+        <mat-error>Missing password.</mat-error>
+      </mat-form-field>
+      <button type="submit" mat-button mat-raised-button color="primary" [disabled]="loginForm.invalid">Submit</button>
+    </form>
+  </mat-card>
+</section>
