@@ -18,6 +18,7 @@ a:hover, a:active {
     margin-left: 2rem;
     margin-right: 2rem;
 }
+
 .nav-caption {
     padding-left: 5px;
 }
@@ -26,4 +27,8 @@ a:hover, a:active {
     display: inline-block;
     margin-left: 0rem;
     margin-right: 0rem;
+}
+.nav-icon-header {
+    padding-left: 2px;
+    padding-right: 5px;
 }
